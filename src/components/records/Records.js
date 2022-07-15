@@ -6,7 +6,7 @@ import { IndividualRecord } from '../individualrecord/IndividualRecord'
 export const Records= () => {
     const [list, setList] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/records')
+        fetch('https://mysterious-retreat-01894.herokuapp.com/records')
         .then(res => res.json())
         .then(data => setList(data))
     },[])
@@ -14,7 +14,7 @@ export const Records= () => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if(proceed){
             console.log('deleting user with id',id);
-            const url = `http://localhost:5000/records/${id}`;
+            const url = `https://mysterious-retreat-01894.herokuapp.com/records/${id}`;
             fetch(url,{
                 method:'DELETE'
 

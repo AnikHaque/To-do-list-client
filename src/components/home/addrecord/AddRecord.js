@@ -7,7 +7,7 @@ const AddRecord = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/records',data)
+        axios.post('https://mysterious-retreat-01894.herokuapp.com/records',data)
         .then(res=>{
            if(res.data.insertedId){
                alert('Added Successfully');

@@ -6,7 +6,7 @@ export const IndividualRecord = (props) => {
     const {_id,email,displayname,contact,address,img}=props.tool;
     const [record, setRecord] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/records')
+        fetch('https://mysterious-retreat-01894.herokuapp.com/records')
         .then(res => res.json())
         .then(data => setRecord(data))
     },[])

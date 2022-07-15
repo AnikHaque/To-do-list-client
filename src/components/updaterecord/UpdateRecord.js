@@ -6,7 +6,7 @@ export const UpdateRecord = () => {
 const [info,setInfo] = useState({});
 useEffect(()=>{
 
-    const url = `http://localhost:5000/records/${id}`;
+    const url = `https://mysterious-retreat-01894.herokuapp.com/records/${id}`;
     fetch(url)
     .then(res=>res.json())
 .then(data=>setInfo(data));
@@ -23,7 +23,7 @@ const address = event.target.address.value;
 const image = event.target.image.value;
 
 const updated= {displayname,email,contact,address,image};
-const url = `http://localhost:5000/records/${id}`;
+const url = `https://mysterious-retreat-01894.herokuapp.com/records/${id}`;
 fetch(url,{
     method:'PUT',
     headers:{
