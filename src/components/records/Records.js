@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { IndividualRecord } from '../individualrecord/IndividualRecord'
 
 
 export const Records= () => {
@@ -34,30 +33,45 @@ export const Records= () => {
   return (
     <div>
 <h1 className='font-bold text-5xl text-center mt-10 mb-5 text-secondary'>All Records: {list.length}</h1>
-<div className='grid lg:grid-cols-4 sm:grid-cols-1 gap-10 px-12  pt-10 pb-10'>
-{
-    list.map(record=><div class="card bg-gray-500 shadow-banner lg:max-w-lg  pt-5">
-    <figure><img src={record.img} alt="Shoes" className='w-28' /></figure>
-    <div class="card-body">
-      <p class="text-white"><b>Email: </b>{record.email}</p>
-      <p class="text-white"><b>Name: </b>{record.displayname}</p>
-      <p class="text-white"><b>Contact No: </b>{record.contact}</p>
-      <p class="text-white"><b>Address: </b>{record.address}</p>
-    
-      <div class="card-actions justify-start">
-   <button  className='btn btn-primary text-white'>
-    <Link to={`/update/${record._id}`}>Edit</Link>
+<div class="overflow-x-auto pt-10 pb-10">
+                <table class="table-compact w-full text-gray-400">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Email</th>
+                            <th>Heading</th>
+                            <th>Description</th>
+                            <th>Completed/Incomplete</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            list.map((a, index) =><tr>
+                                <th>{index + 1}</th>
+                                <td className='text-center'>{a.email}</td>
+                                <td className='text-center'>$ {a.heading}</td>
+                                <td className='text-center'>{a.description}</td>
+                                <td className='text-center'>{a.completed}</td>
+                                <td className='text-center'>{a.comment}</td>
+                                <td className='text-center'>
+                                <button  className='btn btn-primary text-white '>
+    <Link to={`/update/${a._id}`}>Edit</Link>
    </button>
-     <button onClick={()=>handleDelete(record._id)} className='btn btn-error text-white'>Delete</button>
-    
-     
-      </div>
-    </div>
-  </div>)
-    
-}
+     <button onClick={()=>handleDelete(a._id)} className='btn btn-error text-white'>Delete</button>
+                                </td>
 
-</div>
+                               
+                            </tr>)
+                        }
+                        
+                        
+                    </tbody>
+                </table>
+            </div>
+
+
+
 
     </div>
   )

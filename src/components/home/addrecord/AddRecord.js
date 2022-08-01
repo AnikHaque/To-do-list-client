@@ -20,11 +20,13 @@ const AddRecord = () => {
             <h1 className='text-center text-4xl font-bold mb-4  text-secondary'>Please Add a Record !!!</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("email",)} placeholder="Email" />
-      <input {...register("displayname",)} placeholder="Name"  />
-      <input type="number" {...register("contact", )} placeholder="Contact No"/>
-      <input {...register("address",)} placeholder="Address" />
+      <input {...register("heading",)} placeholder="Task Heading"  />
+      <input {...register("description",)} placeholder="Task Description"  />
+     
+      <input {...register("completed",)} placeholder="Completed/ Not Completed" />
+      <input {...register("comment",)} placeholder="Please add a comment" />
       
-      <input {...register("img",)} placeholder="User Image"/>
+    
       <input type="submit" className='bg-secondary' />
     </form> 
         </div>

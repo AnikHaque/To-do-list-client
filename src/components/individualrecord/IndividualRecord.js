@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './IndividualRecord.css'
 export const IndividualRecord = (props) => {
-    const {_id,email,displayname,contact,address,img}=props.tool;
+    const {_id,email,heading,description,completed,comment}=props.tool;
     const [record, setRecord] = useState([])
     useEffect(()=>{
         fetch('https://mysterious-retreat-01894.herokuapp.com/records')
@@ -17,12 +17,12 @@ console.log('deleting user with id',id);
   return (
     <div>
        <div class="card bg-gray-500 shadow-banner lg:max-w-lg  pt-5">
-  <figure><img src={img} alt="Shoes" className='w-28' /></figure>
   <div class="card-body">
     <p class="text-white"><b>Email: </b>{email}</p>
-    <p class="text-white"><b>Name: </b>{displayname}</p>
-    <p class="text-white"><b>Contact No: </b>{contact}</p>
-    <p class="text-white"><b>Address: </b>{address}</p>
+    <p class="text-white"><b>Task Heading: </b>{heading}</p>
+    <p class="text-white">{description}</p>
+    <p class="text-white"><b>Completed </b>{completed}</p>
+    <p class="text-white"><b>Comment </b>{comment}</p>
   
     <div class="card-actions justify-start">
    <button onClick={()=>handleDelete(record._id)} className='btn btn-error text-white'>Delete</button>
