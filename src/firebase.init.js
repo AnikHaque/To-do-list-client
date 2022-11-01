@@ -5,13 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBFXB2tIGJpP2Vb1PwuyOUNKRXRGwGd19Q",
-  authDomain: "resturant-project-b90c8.firebaseapp.com",
-  projectId: "resturant-project-b90c8",
-  storageBucket: "resturant-project-b90c8.appspot.com",
-  messagingSenderId: "980374271764",
-  appId: "1:980374271764:web:df800db67e105dda7b3401"
+  apiKey: "AIzaSyD6QgytZNT3qNAai_axliA-x2hxtwA1Q4g",
+  authDomain: "to-do-105ca.firebaseapp.com",
+  projectId: "to-do-105ca",
+  storageBucket: "to-do-105ca.appspot.com",
+  messagingSenderId: "999559984656",
+  appId: "1:999559984656:web:e60d189b4e4d0f812fbc95"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
